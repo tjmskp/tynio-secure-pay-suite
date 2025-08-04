@@ -10,7 +10,7 @@ export function HeroSection() {
   ];
 
   return (
-    <section className="relative bg-gradient-hero text-primary-foreground overflow-hidden">
+    <section className="relative bg-background text-foreground overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:20px_20px]" />
       
@@ -28,7 +28,7 @@ export function HeroSection() {
               <span className="text-primary"> for the UK</span>
             </h1>
             
-            <p className="text-xl text-primary-foreground/80 leading-relaxed max-w-lg">
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
               Enterprise-grade payment gateway built for UK businesses. 
               Process payments securely with our PCI-compliant infrastructure.
             </p>
@@ -38,7 +38,7 @@ export function HeroSection() {
                 Start Integration
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
-              <Button variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300">
+              <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300">
                 View Documentation
               </Button>
             </div>
@@ -65,13 +65,13 @@ export function HeroSection() {
             {stats.map((stat, index) => (
               <Card 
                 key={stat.label} 
-                className="p-6 bg-white/10 border-white/20 backdrop-blur-sm hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-xl group"
+                className="p-6 bg-card border border-border backdrop-blur-sm hover:bg-accent transition-all duration-300 hover:scale-105 hover:shadow-xl group"
                 style={{ animationDelay: `${index * 150}ms` }} // Increased delay for better stagger
               >
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-3xl font-bold text-white">{stat.value}</p>
-                    <p className="text-primary-foreground/70 mt-1">{stat.label}</p>
+                    <p className="text-3xl font-bold text-foreground">{stat.value}</p>
+                    <p className="text-muted-foreground mt-1">{stat.label}</p>
                   </div>
                   <stat.icon className="h-8 w-8 text-primary" />
                 </div>
@@ -79,7 +79,7 @@ export function HeroSection() {
             ))}
 
             {/* Live Transaction Indicator */}
-            <Card className="p-6 bg-primary/20 border-primary/30 backdrop-blur-sm">
+            <Card className="p-6 bg-primary/10 border-primary/20 backdrop-blur-sm">
               <div className="flex items-center space-x-3">
                 <div className="flex space-x-1">
                   <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
@@ -87,8 +87,8 @@ export function HeroSection() {
                   <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
                 </div>
                 <div>
-                  <p className="text-white font-semibold">Live Transactions</p>
-                  <p className="text-primary/80 text-sm">Processing payments in real-time</p>
+                  <p className="text-foreground font-semibold">Live Transactions</p>
+                  <p className="text-muted-foreground text-sm">Processing payments in real-time</p>
                 </div>
               </div>
             </Card>
