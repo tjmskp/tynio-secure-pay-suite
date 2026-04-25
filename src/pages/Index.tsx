@@ -1,7 +1,5 @@
-import Home from "./Home";
+import { Navigate } from "react-router-dom";
 
-const Index = () => {
-  return <Home />;
-};
+const Index = () => <Navigate to="/vault" replace />;
 
 export default Index;
