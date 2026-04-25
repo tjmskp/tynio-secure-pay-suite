@@ -14,7 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      user_keys: {
+        Row: {
+          created_at: string
+          salt: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          salt: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          salt?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      vault_entries: {
+        Row: {
+          created_at: string
+          id: string
+          notes: string | null
+          password_ciphertext: string
+          password_iv: string
+          title: string
+          updated_at: string
+          url: string | null
+          user_id: string
+          username: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          notes?: string | null
+          password_ciphertext: string
+          password_iv: string
+          title: string
+          updated_at?: string
+          url?: string | null
+          user_id: string
+          username?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          notes?: string | null
+          password_ciphertext?: string
+          password_iv?: string
+          title?: string
+          updated_at?: string
+          url?: string | null
+          user_id?: string
+          username?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
